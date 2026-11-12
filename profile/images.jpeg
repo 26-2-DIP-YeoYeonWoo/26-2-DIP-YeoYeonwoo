@@ -1,1 +1,13 @@
+git add "C:\Users\User\Documents\카카오톡 받은 파일\KakaoTalk_20261008_134138627.jpg"
+git commit -m "Add profile image"
+git push origin main
+import streamlit as st
 
+st.title("나의 프로필")
+
+# GitHub에 올린 이미지 파일 불러오기
+st.image(
+    "C:\Users\User\Documents\카카오톡 받은 파일\KakaoTalk_20261008_134138627.jpg",
+    caption="여연우 프로필 사진",
+    width=200
+)
