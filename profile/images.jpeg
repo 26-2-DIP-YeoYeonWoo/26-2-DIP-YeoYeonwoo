@@ -1,13 +1,41 @@
-git add "C:\Users\User\Documents\카카오톡 받은 파일\KakaoTalk_20261008_134138627.jpg"
-git commit -m "Add profile image"
-git push origin main
+
 import streamlit as st
+import os
 
-st.title("나의 프로필")
-
-# GitHub에 올린 이미지 파일 불러오기
-st.image(
-    "C:\Users\User\Documents\카카오톡 받은 파일\KakaoTalk_20261008_134138627.jpg",
-    caption="여연우 프로필 사진",
-    width=200
+st.set_page_config(
+    page_title="나의 프로필",
+    page_icon="👤",
+    layout="centered"
 )
+
+st.title("👤 나의 프로필")
+st.divider()
+
+# GitHub 저장소에 업로드한 이미지
+image_path = os.path.join(
+    os.path.dirname(__file__),
+    "KakaoTalk_20261008_134138627.jpg"
+)
+
+col1, col2 = st.columns([1, 2])
+
+with col1:
+    st.image(image_path, width=150)
+
+with col2:
+    st.header("여연우")
+    st.write("학번: 202401986")
+    st.write("학과: 의용영상처리")
+
+st.divider()
+
+st.header("자기소개")
+st.write("안녕하세요! 저의 프로필 페이지입니다.")
+
+st.header("관심 분야")
+st.write("- 인공지능")
+st.write("- 의료영상처리")
+st.write("- Python 프로그래밍")
+
+st.divider()
+st.caption("2026 My Profile")
